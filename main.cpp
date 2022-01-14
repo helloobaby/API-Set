@@ -7,9 +7,15 @@ using namespace std;
 
 char out[MAX_PATH];
 
-int main()
+int main(int argc,char*argv[])
 {
-    HMODULE base = LoadLibraryA("api-ms-win-eventing-controller-l1-1-0.dll");
+    if (argc > 2)
+    {
+        cout << "Invaild useage\n";
+        return -1;
+    }
+
+    HMODULE base = LoadLibraryA(argv[1]);
     if (!base)
         cout << "Invaild dll name\n";
 
