@@ -10,10 +10,12 @@ char out[MAX_PATH];
 int main()
 {
     HMODULE base = LoadLibraryA("api-ms-win-eventing-controller-l1-1-0.dll");
+    if (!base)
+        cout << "Invaild dll name\n";
+
     GetModuleFileNameA(base, out, MAX_PATH);
     cout << out << endl;
 
     return 0;
 }
-
 
