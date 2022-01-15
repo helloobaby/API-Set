@@ -7,7 +7,7 @@ using namespace std;
 
 char out[MAX_PATH];
 
-int main(int argc,char*argv[])
+int main(int argc, char* argv[])
 {
     if (argc > 2)
     {
@@ -20,8 +20,7 @@ int main(int argc,char*argv[])
         cout << "Invaild dll name\n";
 
     GetModuleFileNameA(base, out, MAX_PATH);
-    cout << out << endl;
+    cout << "Output: " << out << endl;
 
     return 0;
 }
-
